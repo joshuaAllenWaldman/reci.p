@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const userController = require('./controllers/userController');
 const recipeController = require('./controllers/recipeController');
 const app = express();
+const db = require('./models');
 
 PORT = process.env.PORT || 5000;
 
