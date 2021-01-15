@@ -18,3 +18,8 @@ mongoose.connection.on('error', (err) => {
     console.log(`Mongoose Error: ${err}`);
 })
 
+module.exports = {
+    User: require('./User'),
+    Recipe: require('./Recipe')
+}
+
