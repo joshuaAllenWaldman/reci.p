@@ -10,6 +10,8 @@ router.get('/recipeShow', (req, res) => {
     res.render('recipes/recipeShow')
 })
 
-
+router.get('/addRecipe', (req, res) => {
+  res.render('recipes/addRecipe');
+});
 
 module.exports = router;

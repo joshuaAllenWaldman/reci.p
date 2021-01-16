@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header id="header">
+    <h1>
+      Reci.P
+    </h1>
+  </header>
+  <main>
+    <h3>Add a recipe</h3>
+    <form action="/">
+      <label for="name">Enter recipe name</label>
+      <input type="text" name="name"><br>
+
+      <label for="username">Enter recipe instructions</label>
+      <input type="text" name="body"><br>
+
+      <label for="email">Enter recipe link</label>
+      <input type="text" name="link"><br>
+
+      <label for="category-select">Choose meal category</label>
+      <select name="category-select" id="category-select">
+        <option value="">Please choose meal category</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+      </select>
+
+      <button type="submit">Add recipe</button>
+    </form>
+  </main>
+</body>
+</html>
