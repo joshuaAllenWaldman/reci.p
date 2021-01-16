@@ -13,18 +13,18 @@
   </header>
   <main>
     <h3>Add a recipe</h3>
-    <form action="/">
-      <label for="name">Enter recipe name</label>
-      <input type="text" name="name"><br>
+    <form action="/recipes" method="POST">
+      <label for="title">Enter recipe name</label>
+      <input type="text" name="title"><br>
 
-      <label for="username">Enter recipe instructions</label>
+      <label for="body">Enter recipe instructions</label>
       <input type="text" name="body"><br>
 
-      <label for="email">Enter recipe link</label>
+      <label for="link">Enter recipe link</label>
       <input type="text" name="link"><br>
 
-      <label for="category-select">Choose meal category</label>
-      <select name="category-select" id="category-select">
+      <label for="category">Choose meal category</label>
+      <select name="category" id="category">
         <option value="">Please choose meal category</option>
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
