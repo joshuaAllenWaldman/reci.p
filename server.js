@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const userController = require('./controllers/userController');
+// const userController = require('./controllers/userController');
 const recipeController = require('./controllers/recipeController');
+const categoryController = require('./controllers/categoryController');
 const app = express();
 const db = require('./models');
 
@@ -23,8 +24,9 @@ app.get('/', (req, res) => {
   res.render('index')
 });
 
-app.use('/users', userController);
+// app.use('/users', userController);
 app.use('/recipes', recipeController);
+app.use('/categories', categoryController);
 
 
 //Port Listener
