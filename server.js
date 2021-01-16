@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 //HOME
 app.get('/', (req, res) => {
   res.redirect('/categories');
-});
+}); 
 
 // app.use('/users', userController);
 app.use('/recipes', recipeController);
