@@ -21,7 +21,7 @@ app.use(methodOverride('_method'));
 
 //HOME
 app.get('/', (req, res) => {
-  res.render('index')
+  res.redirect('/categories');
 });
 
 // app.use('/users', userController);
