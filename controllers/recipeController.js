@@ -58,5 +58,25 @@ router.post('/', (req, res) => {
   })
 })
 
+//GET edit
+router.get('/:id/edit', (req, res) => {
+  db.Recipe.findById(req.params.id, (err, foundRecipe) => {
+    if(err){
+      console.log(err)
+    }
+    const context = {
+      recipeData: foundRecipe,
+    }
+    res.render('recipes/editRecipe', context)
+  })
+
+})
+
+//Post update
+router.put('/:id', (req, res) => {
+
+})
+
+
 
 module.exports = router;

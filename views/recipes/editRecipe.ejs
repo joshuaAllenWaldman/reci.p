@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header id="header">
+    <h1>
+      Reci.P
+    </h1>
+  </header>
+  <main>
+    <h3>Edit Recipe</h3>
+    <form action="/recipes/<%=recipeData._id%>?_method=PUT" method="POST">
+      <label for="title">Edit name</label>
+      <input type="text" name="title" value="<%=recipeData.title%>"><br>
+
+      <label for="body">Edit recipe instructions</label>
+      <input type="text" name="body" value="<%=recipeData.body%>"><br>
+
+      <label for="link">Edit link</label>
+      <input type="text" name="link" value="<%=recipeData.link%>"><br>
+
+      <label for="category">Choose meal category</label>
+      <select name="category" id="category">
+        <option value="">Please choose meal category</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+      </select>
+
+      <button type="submit">Add recipe</button>
+    </form>
+  </main>
+</body>
+</html>

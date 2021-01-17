@@ -26,7 +26,10 @@
                 <%= recipeData.body %>
             </p>
         </article>
-        <button>Edit recipe</button>
+        <form action="/recipes/<%= recipeData._id %>/edit" method="GET">
+            <button type="submit">Edit recipe</button>
+        </form>
+        
         <button>Delete recipe</button>
       </main>
 
