@@ -12,19 +12,18 @@
         </h1>
       </header>
       <section class="navigation">
-          <h2 class="recipe-title">Dynamic Recipe Title</h2>
+          <h2 class="recipe-title"><%= recipeData.title %></h2>
       </section>
 
       <main class="recipe-container">
-            <a href="#">
+            <a href="<%= recipeData.link %>" target="_blank">
                 <h4>
-                    recipe link
+                    <%= recipeData.link %>
                 </h4>
             </a>
         <article class="recipe-body">
             <p>
-                dynamic recipe body <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, fugit sunt, doloribus asperiores laborum vero officiis odio architecto reprehenderit vel aliquam tenetur iusto commodi perferendis, eum ipsum quis dicta optio quisquam omnis soluta nihil molestiae error libero? Nemo aliquid itaque optio sunt nesciunt esse accusamus eos! Aut omnis exercitationem ducimus dolorum. Quasi cupiditate non quos nostrum, atque harum voluptatem delectus corporis debitis culpa esse, ex libero tenetur molestias pariatur qui dicta veritatis dolore fuga. Labore assumenda aut, illum, sed earum molestiae esse quidem quia, laboriosam commodi reiciendis quos. Quia ullam pariatur perferendis impedit accusamus consequatur dolorem alias explicabo nam. Numquam!
+                <%= recipeData.body %>
             </p>
         </article>
         <button>Edit recipe</button>

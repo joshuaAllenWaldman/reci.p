@@ -4,7 +4,17 @@ const db = require('../models');
 
 // Show all recipe
 router.get('/', (req, res) => {
-    res.render('recipes/recipeIndex')
+  db.Recipe.find({}, (err, allRecipes) => {
+    if (err) {
+      console.log(err);
+    }
+
+    const context = {
+      recipeData: allRecipes,
+    };
+    res.render('recipes/recipeIndex', context);
+  })
+
 });
 
 
@@ -22,9 +32,11 @@ router.get('/:id', (req, res) => {
     if (err) {
       console.log(err);
     }
-
+    const context = {
+      recipeData: foundRecipe,
+    }
+    res.render('recipes/recipeShow', context);
   })
-    res.render('recipes/recipeShow');
 })
 
 router.post('/', (req, res) => {
