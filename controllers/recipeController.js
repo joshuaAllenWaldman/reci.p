@@ -67,6 +67,7 @@ router.get('/:id/edit', (req, res) => {
     const context = {
       recipeData: foundRecipe,
     }
+    console.log(req.body);
     res.render('recipes/editRecipe', context)
   })
 
@@ -74,9 +75,28 @@ router.get('/:id/edit', (req, res) => {
 
 //Post update
 router.put('/:id', (req, res) => {
+  db.Recipe.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new: true},
+    (err, updatedRecipe) => {
+      if (err) {
+        console.log(err)
+      }
 
+      res.redirect('/recipes');
+    }
+  )
+});
+
+router.delete('/:id', (req, res) => {
+  const recipeId = req.params.id;
+  db.Recipe.findByIdAndDelete(recipeId, (err, deletedRecipe) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/recipes');
+  })
 })
-
-
 
 module.exports = router;

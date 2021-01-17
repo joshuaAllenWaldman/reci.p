@@ -18,7 +18,9 @@
         <h3>All Recipes</h3>
         <ul>
           <% for (let i = 0; i < recipeData.length; i++) { %>
-            <li><a href="/recipes/<%= recipeData[i]._id %>"><%= recipeData[i].title %></a></li>
+            <li>
+              <a href="/recipes/<%= recipeData[i]._id %>"><%= recipeData[i].title %></a>
+            </li>
           <% } %>
         </ul>
       </div>

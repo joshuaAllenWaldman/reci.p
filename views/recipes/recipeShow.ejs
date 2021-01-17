@@ -30,7 +30,9 @@
             <button type="submit">Edit recipe</button>
         </form>
         
-        <button>Delete recipe</button>
+        <form action="/recipes/<%= recipeData._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete recipe</button>
+        </form>
       </main>
 
 </body>
