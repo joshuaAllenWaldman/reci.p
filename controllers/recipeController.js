@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
     }
     console.log('New Recipe:', createdRecipe);
 
-    res.render('recipes/recipeIndex')
+    res.redirect('/recipes')
   })
 })
 
