@@ -16,16 +16,21 @@
       <div>
         <h3>Lunch</h3>
         <ul>
-          <li><a href="">sample recipe link</a></li>
+          <% for (let i = 0; i < lunchData.recipes.length; i++) { %>
+            <li>
+              <a href="/recipes/<%= lunchData.recipes[i]._id%>">
+                <%= lunchData.recipes[i].title%></a>
+            </li>
+          <% } %>
         </ul>
       </div>
     </div>
+    <form action="/recipes/addRecipe" method="GET">
+      <button type="submit">Add Recipe</button>
+  </form>
+  <form action="/categories" method="GET">
+    <button type="submit">Back To Categories</button>
+</form>
   </main>
-  <form action="/recipes/addRecipe" method="GET">
-    <button type="submit">Add Recipe</button>
-</form>
-<form action="/categories" method="GET">
-  <button type="submit">Back To Categories</button>
-</form>
 </body>
 </html>

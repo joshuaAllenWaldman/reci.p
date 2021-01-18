@@ -16,7 +16,12 @@
       <div>
         <h3>Dinner</h3>
         <ul>
-          <li><a href="">sample recipe link</a></li>
+          <% for (let i = 0; i < dinnerData.recipes.length; i++) { %>
+            <li>
+              <a href="/recipes/<%= dinnerData.recipes[i]._id%>">
+                <%= dinnerData.recipes[i].title%></a>
+            </li>
+          <% } %>
         </ul>
       </div>
     </div>

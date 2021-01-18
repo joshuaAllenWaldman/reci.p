@@ -40,6 +40,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // console.log(req.body)
+  const url = req.originalUrl;
   db.Recipe.create(req.body, (err, createdRecipe) => {
     if(err) {
       console.log(err)
@@ -56,9 +57,12 @@ router.post('/', (req, res) => {
         
       }
     )
-
-
-    res.redirect('/recipes')
+    console.log(`url = , ${url}`);
+    if (req.body.category) {
+      res.redirect(`/categories/${(req.body.category).toLowerCase()}`)
+    } else {
+      res.redirect('/recipes')
+    }
   })
 })
 

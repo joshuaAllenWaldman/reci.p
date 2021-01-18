@@ -8,26 +8,42 @@ router.get('/', (req, res) => {
 
 //Show All Breakfast recipes
 router.get('/breakfast', (req, res) => {
-  const categoryName = req.body.title;
-  db.Category.findOne(categoryName).populate('recipes').exec(
+  db.Category.findOne({'title': 'Breakfast'}).populate('recipes').exec(
     (err, foundCategory) => {
       if(err){console.log(err)};
       const context = {
         breakfastData: foundCategory
       }
-      console.log(foundCategory)
       res.render('category/breakfast', context)
+    }
+    
+  )
+});
+
+router.get('/lunch', (req, res) => {
+  db.Category.findOne({'title': 'Lunch'}).populate('recipes').exec(
+    (err, foundCategory) => {
+      if(err){console.log(err)};
+      const context = {
+        lunchData: foundCategory
+      }
+      res.render('category/lunch', context)
     }
   )
 
 });
 
-router.get('/lunch', (req, res) => {
-  res.render('category/lunch');
-});
-
 router.get('/dinner', (req, res) => {
-  res.render('category/dinner');
+  db.Category.findOne({'title': 'Dinner'}).populate('recipes').exec(
+    (err, foundCategory) => {
+      if(err){console.log(err)};
+      const context = {
+        dinnerData: foundCategory
+      }
+      res.render('category/dinner', context)
+    }
+  )
+
 });
 
 
