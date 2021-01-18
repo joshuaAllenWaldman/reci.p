@@ -7,7 +7,30 @@ router.get('/', (req, res) => {
 });
 
 router.get('/breakfast', (req, res) => {
-  res.render('category/breakfast');
+  db.Recipe.find({'category': 'breakfast'}, (err, allRecipes) => {
+    if (err) {
+      console.log(err);
+    }
+    const context = {
+      recipeData: allRecipes,
+    };
+    db.Category.findOne({'title': 'Breakfast'})
+    .populate('recipes')
+    .exec((err, foundCategory) => {
+      if (err) {
+        console.log(err);
+      }
+      // console.log(allRecipes)
+      for (let i = 0; i < allRecipes.length; i++) {
+        foundCategory.recipes.push(allRecipes[i]._id);
+      }
+      console.log(foundCategory);
+      const context = {
+        breakfastData: foundCategory
+      };
+      res.render('category/breakfast', context);
+    })
+  });
 });
 
 router.get('/lunch', (req, res) => {
