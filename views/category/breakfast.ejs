@@ -19,7 +19,7 @@
           <% for (let i = 0; i < breakfastData.recipes.length; i++) { %>
             <li>
               <a href="/recipes/<%= breakfastData.recipes[i]._id%>">
-                <%= breakfastData.recipes[i]%>RECIPE</a>
+                <%= breakfastData.recipes[i].title%></a>
             </li>
           <% } %>
         </ul>

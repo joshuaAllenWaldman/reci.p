@@ -6,31 +6,20 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
+//Show All Breakfast recipes
 router.get('/breakfast', (req, res) => {
-  db.Recipe.find({'category': 'breakfast'}, (err, allRecipes) => {
-    if (err) {
-      console.log(err);
-    }
-    const context = {
-      recipeData: allRecipes,
-    };
-    db.Category.findOne({'title': 'Breakfast'})
-    .populate('recipes')
-    .exec((err, foundCategory) => {
-      if (err) {
-        console.log(err);
-      }
-      // console.log(allRecipes)
-      for (let i = 0; i < allRecipes.length; i++) {
-        foundCategory.recipes.push(allRecipes[i]._id);
-      }
-      console.log(foundCategory);
+  const categoryName = req.body.title;
+  db.Category.findOne(categoryName).populate('recipes').exec(
+    (err, foundCategory) => {
+      if(err){console.log(err)};
       const context = {
         breakfastData: foundCategory
-      };
-      res.render('category/breakfast', context);
-    })
-  });
+      }
+      console.log(foundCategory)
+      res.render('category/breakfast', context)
+    }
+  )
+
 });
 
 router.get('/lunch', (req, res) => {

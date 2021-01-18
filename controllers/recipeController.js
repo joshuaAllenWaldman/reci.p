@@ -40,18 +40,23 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // console.log(req.body)
-  const newRecipe = {};
-  newRecipe.title = req.body.title;
-  newRecipe.body = req.body.body;
-  newRecipe.link = req.body.link;
-  newRecipe.category = req.body.category;
-
-  console.log(newRecipe)
-  db.Recipe.create(newRecipe, (err, createdRecipe) => {
+  db.Recipe.create(req.body, (err, createdRecipe) => {
     if(err) {
       console.log(err)
     }
     console.log('New Recipe:', createdRecipe);
+
+    db.Category.findOneAndUpdate(
+      {title: createdRecipe.category},
+      {$push: {recipes: createdRecipe._id}},
+      {new:true},
+      (err, updatedCategory) => {
+        if(err){console.log(err)}
+        console.log(updatedCategory)
+        
+      }
+    )
+
 
     res.redirect('/recipes')
   })
