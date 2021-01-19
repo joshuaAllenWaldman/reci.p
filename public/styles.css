@@ -1,0 +1,50 @@
+body {
+  background-color: #eee2dc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#header {
+  position: relative;
+  text-align: center;
+  color: #ac3b61;
+  Font-Family: 'Varela Round', Sans-Serif;
+  Font-Size: 40px;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #123c69;
+  Font-Family: 'Noto Serif', Serif;
+  Font-Size: 22px;
+}
+
+.category-title {
+  margin: 40px;
+  background-color: #edc7b7;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #123c69;
+}
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #123c69;
+}
+
+
