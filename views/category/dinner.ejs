@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
@@ -14,10 +16,10 @@
   <main>
     <div class="container">
       <div>
-        <h3>Dinner</h3>
-        <ul>
+        <h3 class="category-page-title">Dinner</h3>
+        <ul class="recipe-ul">
           <% for (let i = 0; i < dinnerData.recipes.length; i++) { %>
-            <li>
+            <li class="recipe-li">
               <a href="/recipes/<%= dinnerData.recipes[i]._id%>">
                 <%= dinnerData.recipes[i].title%></a>
             </li>
@@ -25,12 +27,15 @@
         </ul>
       </div>
     </div>
-    <form action="/recipes/addRecipe" method="GET">
-      <button type="submit">Add Recipe</button>
-  </form>
-  <form action="/categories" method="GET">
-    <button type="submit">Back To Categories</button>
-</form>
   </main>
+
+     <section class="button-container">
+    <form action="/recipes/addRecipe" method="GET">
+      <button type="submit" class="cat-nav-btn">Add Recipe</button>
+    </form>
+    <form action="/categories" method="GET">
+      <button type="submit" class="cat-nav-btn">Back</button>
+    </form>
+  </section>
 </body>
 </html>
