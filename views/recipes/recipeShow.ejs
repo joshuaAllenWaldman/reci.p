@@ -14,18 +14,20 @@
         </h1>
     </header>
 
-    <section>
+    <section class="recipe-title-container">
         <h2 class="recipe-title"><%= recipeData.title %></h2>
     </section>
 
 <div class="recipe-instructions">
     <a href="<%= recipeData.link %>" target="_blank">
-        <h4>
-            Link to recipe
-        </h4>
+        <% if(recipeData.link){ %>
+            <h4>
+                Go to recipe webpage
+            </h4>
+      <%  } %>
     </a>
     <article class="recipe-ins-body">
-        <p>
+        <p class="recipe-body-text">
             <%= recipeData.body %>
         </p>
     </article>
@@ -33,19 +35,19 @@
 
 <nav class="show-buttons">
     <form action="/recipes/<%= recipeData._id %>/edit" method="GET">
-        <button type="submit">Edit recipe</button>
+        <button type="submit" class="show-btns">Edit recipe</button>
     </form>
 
     <form action="/recipes/<%= recipeData._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete recipe</button>
+        <button type="submit" class="show-btns">Delete recipe</button>
     </form>
 
     <form action="/recipes" method="GET">
-            <button type="submit">Back To Recipes</button>
+            <button type="submit" class="show-btns">Back To Recipes</button>
     </form>
 
     <form action="/categories" method="GET">
-            <button type="submit">Back To Categories</button>
+            <button type="submit" class="show-btns">Back To Categories</button>
     </form>
 </nav>
 
