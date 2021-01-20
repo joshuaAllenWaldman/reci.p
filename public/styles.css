@@ -74,8 +74,6 @@ a:hover{
   color: var(--font-color);
 }
 
-
-
 .category-page-title {
   text-decoration: none;
   color: var(--font-color);
@@ -139,8 +137,6 @@ a:hover{
 
  .cat-nav-btn {
    margin: 30px;
-
-
  }
 
 span {
@@ -148,7 +144,13 @@ span {
   color: var(--font-color);
 }
 
-
+#nav-add-recipe {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--font-color);
+}
 
 .form-div {
   display: flex;
@@ -176,9 +178,26 @@ div.input {
   align-items: flex-start;
 }
 
-#add-recipe-btn {
+/* #add-recipe-btn {
   position: relative;
   left: 40%;
+} */
+
+.recipe-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
+.recipe-ins-body {
+  width: 40vw;
+}
 
+.show-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50vw;
+  justify-content: space-around;
+}

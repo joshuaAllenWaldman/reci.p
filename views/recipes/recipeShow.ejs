@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Name Of Recipe</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
+    <title><%= recipeData.title %></title>
 </head>
 <body>
     <header id="header">
         <h1>
-          Reci.P
+            Reci.P
         </h1>
-      </header>
-      <section class="navigation">
-          <h2 class="recipe-title"><%= recipeData.title %></h2>
-      </section>
+    </header>
 
-      <main class="recipe-container">
-            <a href="<%= recipeData.link %>" target="_blank">
-                <h4>
-                    <%= recipeData.title%>
-                </h4>
-            </a>
-        <article class="recipe-body">
-            <p>
-                <%= recipeData.body %>
-            </p>
-        </article>
-        <form action="/recipes/<%= recipeData._id %>/edit" method="GET">
-            <button type="submit">Edit recipe</button>
-        </form>
-        
-        <form action="/recipes/<%= recipeData._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete recipe</button>
-        </form>
-      </main>
+    <section>
+        <h2 class="recipe-title"><%= recipeData.title %></h2>
+    </section>
 
-      <form action="/recipes" method="GET">
-        <button type="submit">Back To Recipes</button>
+<div class="recipe-instructions">
+    <a href="<%= recipeData.link %>" target="_blank">
+        <h4>
+            Link to recipe
+        </h4>
+    </a>
+    <article class="recipe-ins-body">
+        <p>
+            <%= recipeData.body %>
+        </p>
+    </article>
+</div>
+
+<nav class="show-buttons">
+    <form action="/recipes/<%= recipeData._id %>/edit" method="GET">
+        <button type="submit">Edit recipe</button>
     </form>
+
+    <form action="/recipes/<%= recipeData._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete recipe</button>
+    </form>
+
+    <form action="/recipes" method="GET">
+            <button type="submit">Back To Recipes</button>
+    </form>
+
     <form action="/categories" method="GET">
-        <button type="submit">Back To Categories</button>
+            <button type="submit">Back To Categories</button>
     </form>
-
-
+</nav>
 
 </body>
 </html>
