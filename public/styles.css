@@ -5,6 +5,10 @@
   --div-box:  #edc7b7;
 }
 
+main {
+  display: flex;
+}
+
 body {
   background-color: var(--bg-color);
   display: flex;
@@ -35,6 +39,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+}
+
+.add-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -71,19 +82,26 @@ a:hover{
 }
 
 #nav {
+  width: 40vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
   color: var(--font-color);
   
 }
+
  .nav-buttons {
-   margin-left: 50%;
-   margin-right: 50%;
-   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 98px;
+   height: 98px;
    border: 2px solid var(--font-color);
    
+ }
+
+ .nav-title {
+   font-size: 20px;
  }
 
  .all-recipes {
@@ -116,6 +134,39 @@ a:hover{
 
  }
 
+span {
+  font-size: 18px;
+  color: var(--font-color);
+}
 
+form {
+  
+}
+
+.form-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: center;
+}
+
+div.label {
+  margin-right: 30px;
+  position: relative;
+  top: -5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: right;
+  /* align-items: flex-start; */
+}
+
+div.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 

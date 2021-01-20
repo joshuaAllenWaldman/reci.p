@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
@@ -12,30 +14,41 @@
     </h1>
   </header>
   <main>
-    <h3>Add a recipe</h3>
     <form action="/recipes" method="POST">
-      <label for="title">Enter recipe name</label>
-      <input type="text" name="title"><br>
-
-      <label for="body">Enter recipe instructions</label>
-      <input type="text" name="body"><br>
-
-      <label for="link">Enter recipe link</label>
-      <input type="text" name="link"><br>
-
-      <label for="category">Choose meal category</label>
-      <select name="category" id="category">
-        <option value="">Please choose meal category</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Dinner">Dinner</option>
-      </select>
-
-      <button type="submit">Add recipe</button>
-    </form>
-    <form action="/recipes" method="GET">
-      <button type="submit">Back</button>
-  </form>
+    <div class="add-container">
+      <h3 class="category-page-title">Add a recipe</h3>
+        <div class="form-div">
+            <div class="label">
+              <label for="title"><span>Enter recipe name:   </span></label><br>
+              <label for="link"><span>Enter recipe link:    </span></label><br>
+              <label for="category"><span>Choose meal category:   </span></label><br>
+              <label for="body"> <span>Enter recipe instructions:   </span> </label>
+            </div>
+            
+            <div class="input">
+              <input type="text" name="title"><br>
+              <input type="text" name="link"><br>
+              <select name="category" id="category">
+                <option value=""><span>Please choose meal category</span></option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+              </select><br>
+              <textarea rows="10" cols="25" name="body" placeholder="Enter recipe instructions here"></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Add recipe</button>
+      </form>
   </main>
+
+  <nav id="nav">
+    <a href="/categories" class="nav-buttons nav-all-recipes">
+      <h3 class="nav-title">Back</h3>
+    </a>
+    <a href="/recipes/addRecipe" class="nav-buttons nav-add-recipes">
+      <h3 class="nav-title">Add</h3>
+    </a>
+  </nav>
 </body>
 </html>
