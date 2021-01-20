@@ -74,11 +74,19 @@ a:hover{
   color: var(--font-color);
 }
 
+
+
 .category-page-title {
   text-decoration: none;
   color: var(--font-color);
   Font-Family: 'Noto Serif', Serif;
   Font-Size: 34px;
+  text-align: center;
+}
+
+#add-recipe-main {
+  display: flex;
+  justify-content: center;
 }
 
 #nav {
@@ -118,7 +126,8 @@ a:hover{
   color: var(--font-color);
   Font-Family: 'Noto Serif', Serif;
   Font-Size: 18px;
-  background-color: #aa677d;
+  background-color: var(--bg-color);
+  border: 2px solid var(--font-color);
  }
 
  .button-container {
@@ -139,9 +148,7 @@ span {
   color: var(--font-color);
 }
 
-form {
-  
-}
+
 
 .form-div {
   display: flex;
@@ -167,6 +174,11 @@ div.input {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+#add-recipe-btn {
+  position: relative;
+  left: 40%;
 }
 
 

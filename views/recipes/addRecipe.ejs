@@ -13,7 +13,7 @@
       Reci.P
     </h1>
   </header>
-  <main>
+  <main id="add-recipe-main">
     <form action="/recipes" method="POST">
     <div class="add-container">
       <h3 class="category-page-title">Add a recipe</h3>
@@ -38,17 +38,15 @@
             </div>
           </div>
         </div>
-        <button type="submit">Add recipe</button>
+        
+        <nav id="nav">
+          <a href="/categories" class="nav-buttons nav-all-recipes">
+            <h3 class="nav-title">Back</h3>
+          </a>
+          <button type="submit" id="add-recipe-btn">Add recipe</button>
+        </nav>
+        
       </form>
-  </main>
-
-  <nav id="nav">
-    <a href="/categories" class="nav-buttons nav-all-recipes">
-      <h3 class="nav-title">Back</h3>
-    </a>
-    <a href="/recipes/addRecipe" class="nav-buttons nav-add-recipes">
-      <h3 class="nav-title">Add</h3>
-    </a>
-  </nav>
+    </main>
 </body>
 </html>
