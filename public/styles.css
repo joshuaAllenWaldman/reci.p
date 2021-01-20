@@ -151,12 +151,22 @@ span {
   color: var(--font-color);
 }
 
-#nav-add-recipe {
+#nav-add-recipes {
   width: 40vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   color: var(--font-color);
+}
+
+#add-recipe-btn {
+  display: block;
+}
+
+.nav-all-recipes {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .form-div {
@@ -185,10 +195,7 @@ div.input {
   align-items: flex-start;
 }
 
-/* #add-recipe-btn {
-  position: relative;
-  left: 40%;
-} */
+
 .recipe-title-container {
   margin: 0;
   height: 100%;
