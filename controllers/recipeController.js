@@ -38,15 +38,17 @@ router.get('/:id', (req, res) => {
   })
 })
 
+//create recipe
 router.post('/', (req, res) => {
   // console.log(req.body)
   const url = req.originalUrl;
   db.Recipe.create(req.body, (err, createdRecipe) => {
     if(err) {
       console.log(err)
+      return res.redirect('/recipes/addRecipe')
     }
-    console.log('New Recipe:', createdRecipe);
-
+    
+    
     db.Category.findOneAndUpdate(
       {title: createdRecipe.category},
       {$push: {recipes: createdRecipe._id}},
