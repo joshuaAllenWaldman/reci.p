@@ -215,8 +215,9 @@ a:hover{
  }
 
  .recipe-ul {
-   list-style-type: circle;
+   list-style-type: none;
    font-size: 22px;
+   text-align: center;
  }
 
  button {
