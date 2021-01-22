@@ -60,6 +60,46 @@ body {
   font-family: 'Rock Salt', cursive;
 }
 
+.login-signup-main {
+  display: flex;
+}
+
+.login-signup-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome {
+  Font-Family: 'Noto Serif', Serif;
+  color: var(--font-color);
+}
+
+.login-signup-form {
+  display: flex;
+  flex-direction: column;
+  Font-Family: 'Noto Serif', Serif;
+  color: var(--font-color);
+}
+
+.login-signup-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signup-btn {
+  border: 2px solid white;
+  background: none;
+  font-size: 18px;
+  padding: 2px;
+}
+
+.login-btn {
+  border: 2px solid white;
+  background: none;
+  font-size: 18px;
+}
+
 .home-main{
   text-align: center;
   display: flex;
