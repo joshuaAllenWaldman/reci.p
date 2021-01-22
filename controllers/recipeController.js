@@ -48,14 +48,11 @@ router.post ('/', (req, res) => {
   if(!req.session.currentUser){
     return res.redirect('/users/login')
   }
-  
   if(!req.body.title) {
-    
-    return res.redirect('/recipes/addRecipe')
+  return res.redirect('/recipes/addRecipe')
   }
   const recipeObject = req.body;
   recipeObject.user = req.session.currentUser._id;
-
   db.Recipe.create(recipeObject, (err, createdRecipe) => {
     if(err) console.log(err);
     console.log('console check 1;',createdRecipe)
@@ -65,7 +62,6 @@ router.post ('/', (req, res) => {
       {new: true},
       (err, foundUser) => {
         if(err)console.log(err);
-        
         if(req.body.category) {
           return res.redirect(`/categories/${(req.body.category).toLowerCase()}`)
         }

@@ -1,0 +1,35 @@
+ To-Do
+
+
+Day 1 (Setup)
+Create Repo and set-up
+Start Server.js boilerplate
+Create models for users and recipes
+Create Views Dir and ejs file for :
+1. Home
+2. Login
+3. Signup
+4. Profile
+5. Recipe Category page
+6. Recipe List
+7. Recipe Page
+Add controllers
+
+
+Day 2 (MVP)
+Full CRUD (Recipe list)
+Work on Restful Routes
+Work on Recipe full CRUD
+If time allows: CSS and main JS
+
+
+Day 3 (Add styling and frontend js)
+CSS and Main JS cont.
+V2
+
+
+Day 4 onwards (Additional Features)
+Comments
+Grocery List
+Images (Upload Care)
+Ingredients
