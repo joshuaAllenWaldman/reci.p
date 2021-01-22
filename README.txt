@@ -1,8 +1,20 @@
 //Read Me
 
-Reci.P is a web app created by Joshua Waldman and Luvy Cunanan. Reci.P was created using HTML, CSS, JavaScript, Express, Mongodb, Mongoose, EJS, Express-session, FontAwesome, GoogleFonts, and a lot of love.
+Reci.P is a web app created by Joshua Waldman and Luvy Cunanan. 
+Technologies used: 
+    -HTML
+    -CSS
+    -JavaScript
+    -Express
+    -Mongoose
+    -EJS
+    -Express-Sessions
+    -FontAwesome
+    -Google GoogleFonts
+Planned using:    
+    -Trello
+    -diagrams.net
 
-Reci.P 
 
 Reci.P is a web app that was made to serve as a online cookbook for the user to store their favorite recipes from all their favorite recipe websites in one place. After signing up and loggin in to their account using their chosen username and password the user can assign a category (Breakfast, Lunch, or Dinner) to their recipe so that it's easier to decide what to cook when choosing a recipe. On top of storing the recipe's url we also provide a place for the user to enter in notes about the recipe. (e.g. if the user adds more of a certain ingredient or if the recipe takes longer than the website says that it does.)   
 User's can add and remove and edit their recipes and notes as many times as they would like.
