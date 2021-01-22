@@ -3,48 +3,73 @@ const router = express.Router();
 const db = require('../models');
 
 router.get('/', (req, res) => {
-    res.render('index');
+  if(!req.session.currentUser) return res.redirect('/users/login');
+ db.User.findById(req.session.currentUser._id, (err, foundUser) => {
+   const context ={
+     currentUser: foundUser,
+   }
+   res.render('category/categoriesIndex', context);
+ })
 });
 
 //Show All Breakfast recipes
 router.get('/breakfast', (req, res) => {
-  db.Category.findOne({'title': 'Breakfast'}).populate('recipes').exec(
-    (err, foundCategory) => {
-      if(err){console.log(err)};
-      const context = {
-        breakfastData: foundCategory
-      }
-      res.render('category/breakfast', context)
+  if(!req.session.currentUser){
+    return res.redirect('/users/login')
+  }
+  db.Recipe.find({
+    $and: [
+      {'category': 'Breakfast'},
+      {user: req.session.currentUser._id}
+    ]
+  }, (err, foundRecipe) => {
+    if(err) console.log(err);
+    const context = {
+      recipeData: foundRecipe,
+      currentUser: req.session.currentUser
     }
-    
-  )
+    res.render('category/breakfast', context)
+  })
+
 });
 
 router.get('/lunch', (req, res) => {
-  db.Category.findOne({'title': 'Lunch'}).populate('recipes').exec(
-    (err, foundCategory) => {
-      if(err){console.log(err)};
-      const context = {
-        lunchData: foundCategory
-      }
-      res.render('category/lunch', context)
+  if(!req.session.currentUser){
+    return res.redirect('/users/login')
+  }
+  db.Recipe.find({
+    $and: [
+      {'category': 'Lunch'},
+      {user: req.session.currentUser._id}
+    ]
+  }, (err, foundRecipe) => {
+    if(err) console.log(err);
+    const context = {
+      recipeData: foundRecipe,
+      currentUser: req.session.currentUser
     }
-  )
-
+    res.render('category/lunch', context)
+  })
 });
 
 router.get('/dinner', (req, res) => {
-  db.Category.findOne({'title': 'Dinner'}).populate('recipes').exec(
-    (err, foundCategory) => {
-      if(err){console.log(err)};
-      const context = {
-        dinnerData: foundCategory
-      }
-      res.render('category/dinner', context)
+  if(!req.session.currentUser){
+    return res.redirect('/users/login')
+  }
+  db.Recipe.find({
+    $and: [
+      {'category': 'Dinner'},
+      {user: req.session.currentUser._id}
+    ]
+  }, (err, foundRecipe) => {
+    if(err) console.log(err);
+    const context = {
+      recipeData: foundRecipe,
+      currentUser: req.session.currentUser
     }
-  )
+    res.render('category/dinner', context)
+  })
 
 });
-
 
 module.exports = router;

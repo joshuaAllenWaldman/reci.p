@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
-  <title>Document</title>
+  <title>Lunch Recipes</title>
 </head>
 <body>
   <header id="header">
@@ -16,20 +16,20 @@
   <main>
     
     <div class="container">
-      <div id="lunch-div-container">
-        <h3 class="category-page-title">Lunch</h3>
+      <div>
+        <h3 class="category-page-title"> <%= currentUser.username%>'s   Lunch Recipes: </h3>
         <ul class="recipe-ul">
-          <% for (let i = 0; i < lunchData.recipes.length; i++) { %>
+          <% for (let i = 0; i < recipeData.length; i++) { %>
             <li class="recipe-li">
-              <a href="/recipes/<%= lunchData.recipes[i]._id%>">
-                <%= lunchData.recipes[i].title%></a>
+              <a href="/recipes/<%= recipeData[i]._id%>">
+                <%= recipeData[i].title%></a>
             </li>
           <% } %>
         </ul>
       </div>
     </div>
   </main>
-
+  
   <nav id="nav">
     <a href="/categories" class="nav-buttons nav-all-recipes">
       <h3 class="nav-title">Back</h3>

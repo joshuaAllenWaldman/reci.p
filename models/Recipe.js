@@ -7,7 +7,11 @@ const recipeSchema = new Schema({
   link: String,
   category: {
     type: String,
-    // ref: 'Category'
+  }, 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 });
 
