@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <title>Reci.P</title>
-      </head>
-      <body>
-        <header id="header">
-          <h1 class="logo"><i class="fas fa-utensils"></i></h1>
-          <h2 class="reci">
-            Reci
-          </h2>
-          <h1 class="p"><strong>P</strong></h1>
-        </header>
-    <section class="recipe-title-container">
-        <h2 class="recipe-title"><%= recipeData.title %></h2>
-    </section>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Varela+Round" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Reci.P</title>
+  </head>
+  <body>
+    <header id="header">
+      <h1 class="logo"><i class="fas fa-utensils"></i></h1>
+      <h2 class="reci">
+          Reci.
+      </h2>
+      <h1 class="p"><strong>P</strong></h1>
+  </header>
 
-<div class="recipe-instructions">
-    <a href="<%= recipeData.link %>" target="_blank">
+  <div id="nav">
+    <ul>
+      <li class="nav-links-test">
+        <a href="/categories">Categories</a>
+      </li>
+      <li class="nav-links-test">
+        <a href="/recipes">All recipes</a>
+      </li>
+      <li class="nav-links-test">
+        <a href="/users/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="container-list">
+    <h2 class="recipe-title"><%= recipeData.title %></h2>
+    <div class="recipe-instructions">
+      <a href="<%= recipeData.link %>" target="_blank">
         <% if(recipeData.link){ %>
-            <h4>
-                Go to recipe webpage
-            </h4>
-      <%  } %>
-    </a>
-    <article class="recipe-ins-body">
+          <h4>
+            Go to recipe webpage
+          </h4>
+        <%  } %>
+      </a>
+      <article class="recipe-ins-body">
+        <h2 class="recipe-body-text">Notes:</h2>
         <p class="recipe-body-text">
-            <%= recipeData.body %>
+          <%= recipeData.body %>
         </p>
-    </article>
-</div>
+      </article>
+    </div>
+    <div class="edit-delete">
+      <form id="form1" action="/recipes/<%= recipeData._id %>/edit" method="GET">
+        <button type="submit" class="show-btns">Edit</button>
+      </form>
 
-<nav class="show-buttons">
-    <form action="/recipes/<%= recipeData._id %>/edit" method="GET">
-        <button type="submit" class="show-btns">Edit recipe</button>
-    </form>
+      <form id="form2" action="/recipes/<%= recipeData._id %>?_method=DELETE"method="POST">
+        <button type="submit" class="show-btns">Delete</button>
+      </form>
+    </div>
+  </div>
 
-    <form action="/recipes/<%= recipeData._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="show-btns">Delete recipe</button>
-    </form>
-
-    <form action="/recipes" method="GET">
-            <button type="submit" class="show-btns">Back To Recipes</button>
-    </form>
-
-    <form action="/categories" method="GET">
-            <button type="submit" class="show-btns">Back To Categories</button>
-    </form>
-</nav>
-
-</body>
+  </body>
 </html>
