@@ -20,7 +20,7 @@ app.use(express.static(`${__dirname}/public`))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
-  secret: process.env.SECRET,
+  secret: 'milk and cookies',
   resave: false,
   saveUninitialized: false,
   cookie: {
